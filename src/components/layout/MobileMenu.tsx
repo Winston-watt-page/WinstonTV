@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Home, Heart, LayoutGrid, Settings, Info, X, Crown } from "lucide-react";
+import { Home, Heart, LayoutGrid, Settings, Info, X } from "lucide-react";
 import { useAppStore } from "@/stores/useAppStore";
 import { useI18n } from "@/i18n";
 
@@ -9,7 +9,6 @@ const ITEMS = [
   { view: "home" as const, icon: Home, labelKey: "channelList" as const },
   { view: "categories" as const, icon: LayoutGrid, labelKey: "categories" as const },
   { view: "favorites" as const, icon: Heart, labelKey: "favorites" as const },
-  { view: "premium" as const, icon: Crown, labelKey: "premium" as const },
   { view: "settings" as const, icon: Settings, labelKey: "playerSettings" as const },
   { view: "about" as const, icon: Info, labelKey: "about" as const },
 ];

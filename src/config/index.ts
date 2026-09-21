@@ -17,7 +17,7 @@ export const PLAYLIST_REFRESH_INTERVAL_MS = 6 * 60 * 60 * 1000; // 6 hours
 export const RECENTLY_WATCHED_LIMIT = 12;
 
 /** How many times the player retries a failed stream automatically. */
-export const STREAM_AUTO_RETRY_ATTEMPTS = 3;
+export const STREAM_AUTO_RETRY_ATTEMPTS = 1;
 
 export const STREAM_AUTO_RETRY_DELAY_MS = 2500;
 

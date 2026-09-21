@@ -7,7 +7,6 @@ import { deriveCategories, filterByCategory, filterBySearch } from "@/lib/channe
 import { ChannelGrid } from "../channels/ChannelGrid";
 import { CategoryTabs } from "../channels/CategoryTabs";
 import { RecentlyWatched } from "../channels/RecentlyWatched";
-import { PremiumBanner } from "../premium/PremiumBanner";
 import { APP_NAME } from "@/config";
 
 export function HomeView() {
@@ -44,8 +43,6 @@ export function HomeView() {
           </p>
         </section>
       )}
-
-      {!isSearching && <PremiumBanner />}
 
       {!isSearching && <RecentlyWatched />}
 

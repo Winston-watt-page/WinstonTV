@@ -1,6 +1,6 @@
 "use client";
 
-import { Home, Tv, Heart, LayoutGrid, Settings, Info, Crown } from "lucide-react";
+import { Home, Tv, Heart, LayoutGrid, Settings, Info } from "lucide-react";
 import { useAppStore } from "@/stores/useAppStore";
 import { useI18n } from "@/i18n";
 import { APP_NAME } from "@/config";
@@ -10,7 +10,6 @@ const NAV_ITEMS = [
   { view: "home" as const, icon: Tv, labelKey: "liveTv" as const },
   { view: "favorites" as const, icon: Heart, labelKey: "favorites" as const },
   { view: "categories" as const, icon: LayoutGrid, labelKey: "categories" as const },
-  { view: "premium" as const, icon: Crown, labelKey: "premium" as const },
   { view: "settings" as const, icon: Settings, labelKey: "settings" as const },
   { view: "about" as const, icon: Info, labelKey: "about" as const },
 ];

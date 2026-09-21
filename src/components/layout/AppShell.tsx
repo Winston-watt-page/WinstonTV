@@ -14,7 +14,6 @@ import { FavoritesView } from "../views/FavoritesView";
 import { CategoriesView } from "../views/CategoriesView";
 import { SettingsView } from "../views/SettingsView";
 import { AboutView } from "../views/AboutView";
-import { PremiumView } from "../views/PremiumView";
 
 export function AppShell() {
   const activeView = useAppStore((s) => s.activeView);
@@ -57,7 +56,6 @@ export function AppShell() {
               {activeView === "home" && <HomeView />}
               {activeView === "favorites" && <FavoritesView />}
               {activeView === "categories" && <CategoriesView />}
-              {activeView === "premium" && <PremiumView />}
               {activeView === "settings" && <SettingsView />}
               {activeView === "about" && <AboutView />}
             </div>
