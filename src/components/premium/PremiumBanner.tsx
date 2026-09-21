@@ -2,15 +2,16 @@
 
 import { Crown, Check } from "lucide-react";
 import { useI18n } from "@/i18n";
+import type { TranslationKey } from "@/i18n/translations";
 
 export function PremiumBanner() {
   const { t } = useI18n();
 
   const features = [
-    { key: "adFree", icon: Check },
-    { key: "hdQuality", icon: Check },
-    { key: "dvr", icon: Check },
-    { key: "exclusiveChannels", icon: Check },
+    { key: "adFree" as TranslationKey, icon: Check },
+    { key: "hdQuality" as TranslationKey, icon: Check },
+    { key: "dvr" as TranslationKey, icon: Check },
+    { key: "exclusiveChannels" as TranslationKey, icon: Check },
   ];
 
   return (
