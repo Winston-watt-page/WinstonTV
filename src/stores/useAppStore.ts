@@ -57,7 +57,7 @@ interface AppState {
   setSearchOpen: (open: boolean) => void;
   isFullscreen: boolean;
   setFullscreen: (open: boolean) => void;
-  activeView: "home" | "favorites" | "categories" | "settings" | "about";
+  activeView: "home" | "favorites" | "categories" | "premium" | "settings" | "about";
   setActiveView: (view: AppState["activeView"]) => void;
 }
 

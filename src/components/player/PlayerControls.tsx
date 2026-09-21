@@ -64,11 +64,11 @@ export function PlayerControls({
       }`}
     >
       {/* Top: channel info */}
-      <div className="pointer-events-auto flex items-center gap-3 p-4">
+      <div className="pointer-events-auto flex items-center gap-2 sm:gap-3 p-3 sm:p-4">
         <ChannelLogo src={channel.logo} name={channel.name} size="sm" />
         <div className="min-w-0">
-          <p className="truncate text-sm font-medium text-white">{channel.name}</p>
-          <span className="flex items-center gap-1.5 text-[11px] text-signal-live">
+          <p className="truncate text-xs sm:text-sm font-medium text-white">{channel.name}</p>
+          <span className="flex items-center gap-1.5 text-[10px] sm:text-[11px] text-signal-live">
             <span className="h-1.5 w-1.5 rounded-full bg-signal-live animate-pulseLive" />
             {t("live")}
           </span>
@@ -76,14 +76,14 @@ export function PlayerControls({
       </div>
 
       {/* Bottom: controls */}
-      <div className="pointer-events-auto flex items-center gap-1.5 p-3 sm:gap-2 sm:p-4">
+      <div className="pointer-events-auto flex items-center gap-1 sm:gap-1.5 p-2 sm:p-3 sm:gap-2 sm:p-4">
         <button
           type="button"
           onClick={onTogglePlay}
           aria-label={isPlaying ? t("pause") : t("play")}
-          className="rounded-full p-2 text-white hover:bg-white/10 focus:outline-none focus-visible:shadow-focus"
+          className="rounded-full p-1.5 sm:p-2 text-white hover:bg-white/10 focus:outline-none focus-visible:shadow-focus"
         >
-          {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+          {isPlaying ? <Pause className="h-4 w-4 sm:h-5 sm:w-5" /> : <Play className="h-4 w-4 sm:h-5 sm:w-5" />}
         </button>
 
         <button
@@ -107,12 +107,12 @@ export function PlayerControls({
           type="button"
           onClick={onToggleMute}
           aria-label={isMuted ? t("unmute") : t("mute")}
-          className="rounded-full p-2 text-white hover:bg-white/10 focus:outline-none focus-visible:shadow-focus"
+          className="rounded-full p-1.5 sm:p-2 text-white hover:bg-white/10 focus:outline-none focus-visible:shadow-focus"
         >
           {isMuted || volume === 0 ? (
-            <VolumeX className="h-5 w-5" />
+            <VolumeX className="h-4 w-4 sm:h-5 sm:w-5" />
           ) : (
-            <Volume2 className="h-5 w-5" />
+            <Volume2 className="h-4 w-4 sm:h-5 sm:w-5" />
           )}
         </button>
         <input
@@ -123,7 +123,7 @@ export function PlayerControls({
           value={isMuted ? 0 : volume}
           onChange={(e) => onVolumeChange(parseFloat(e.target.value))}
           aria-label={t("volume")}
-          className="hidden w-16 accent-marigold-500 sm:block md:w-24"
+          className="hidden w-12 sm:w-16 accent-marigold-500 sm:block md:w-24"
         />
 
         <span className="flex-1" />
@@ -135,9 +135,9 @@ export function PlayerControls({
             type="button"
             onClick={onTogglePip}
             aria-label={t("pictureInPicture")}
-            className="rounded-full p-2 text-white hover:bg-white/10 focus:outline-none focus-visible:shadow-focus"
+            className="rounded-full p-1.5 sm:p-2 text-white hover:bg-white/10 focus:outline-none focus-visible:shadow-focus"
           >
-            <PictureInPicture2 className="h-5 w-5" />
+            <PictureInPicture2 className="h-4 w-4 sm:h-5 sm:w-5" />
           </button>
         )}
 
@@ -145,9 +145,9 @@ export function PlayerControls({
           type="button"
           onClick={onToggleFullscreen}
           aria-label={isFullscreen ? t("exitFullscreen") : t("fullscreen")}
-          className="rounded-full p-2 text-white hover:bg-white/10 focus:outline-none focus-visible:shadow-focus"
+          className="rounded-full p-1.5 sm:p-2 text-white hover:bg-white/10 focus:outline-none focus-visible:shadow-focus"
         >
-          {isFullscreen ? <Minimize className="h-5 w-5" /> : <Maximize className="h-5 w-5" />}
+          {isFullscreen ? <Minimize className="h-4 w-4 sm:h-5 sm:w-5" /> : <Maximize className="h-4 w-4 sm:h-5 sm:w-5" />}
         </button>
       </div>
     </div>

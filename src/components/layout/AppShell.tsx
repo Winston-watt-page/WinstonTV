@@ -14,6 +14,7 @@ import { FavoritesView } from "../views/FavoritesView";
 import { CategoriesView } from "../views/CategoriesView";
 import { SettingsView } from "../views/SettingsView";
 import { AboutView } from "../views/AboutView";
+import { PremiumView } from "../views/PremiumView";
 
 export function AppShell() {
   const activeView = useAppStore((s) => s.activeView);
@@ -33,7 +34,7 @@ export function AppShell() {
       <div className="mx-auto flex w-full max-w-[1600px] flex-1">
         <Sidebar />
 
-        <main className="min-w-0 flex-1 px-4 py-4 sm:px-6 sm:py-6">
+        <main className="min-w-0 flex-1 px-3 py-3 sm:px-4 sm:py-4 md:px-6 md:py-6">
           {playlistStatus === "loading" && <LoadingScreen />}
 
           {playlistStatus === "error" && (
@@ -56,6 +57,7 @@ export function AppShell() {
               {activeView === "home" && <HomeView />}
               {activeView === "favorites" && <FavoritesView />}
               {activeView === "categories" && <CategoriesView />}
+              {activeView === "premium" && <PremiumView />}
               {activeView === "settings" && <SettingsView />}
               {activeView === "about" && <AboutView />}
             </div>

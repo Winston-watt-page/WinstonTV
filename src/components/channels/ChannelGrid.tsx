@@ -13,7 +13,7 @@ interface ChannelGridProps {
   emptyBodyKey?: "noResultsBody" | "noFavoritesBody";
 }
 
-const CHUNK_SIZE = 60;
+const CHUNK_SIZE = 30;
 
 export function ChannelGrid({
   channels,
@@ -70,7 +70,7 @@ export function ChannelGrid({
       role="grid"
       aria-label={t("channelList")}
       onKeyDown={handleKeyDown}
-      className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+      className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
     >
       {visible.map((channel, i) => (
         <ChannelCard

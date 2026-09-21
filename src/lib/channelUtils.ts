@@ -30,3 +30,39 @@ export function initialsFromName(name: string): string {
   if (!clean) return "W";
   return clean[0].toUpperCase();
 }
+
+export function isValidChannelUrl(url: string): boolean {
+  if (!url || url.trim() === "") return false;
+  
+  try {
+    const parsed = new URL(url);
+    const validProtocols = ["http:", "https:", "rtmp:", "rtmps:"];
+    if (!validProtocols.includes(parsed.protocol)) return false;
+    
+    const hostname = parsed.hostname.toLowerCase();
+    const invalidDomains = [
+      "example.com",
+      "localhost",
+      "127.0.0.1",
+      "0.0.0.0",
+      "invalid",
+      "broken",
+      "error",
+      "timeout",
+    ];
+    
+    if (invalidDomains.some(invalid => hostname.includes(invalid))) return false;
+    
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function filterValidChannels(channels: Channel[]): Channel[] {
+  return channels.filter(channel => {
+    if (!channel.name || channel.name.trim() === "") return false;
+    if (!isValidChannelUrl(channel.url)) return false;
+    return true;
+  });
+}

@@ -142,10 +142,10 @@ export function VideoPlayer() {
 
   if (!currentChannel) {
     return (
-      <div className="flex min-h-40 w-full flex-col items-center justify-center gap-2 rounded-xl border border-white/5 bg-ink-800 px-4 py-8 text-center">
-        <ListVideo className="h-8 w-8 text-mist-700" aria-hidden="true" />
-        <p className="text-sm font-medium text-mist-300">{t("noChannelSelected")}</p>
-        <p className="text-xs text-mist-500">{t("selectChannelHint")}</p>
+      <div className="flex min-h-32 sm:min-h-40 w-full flex-col items-center justify-center gap-2 rounded-xl border border-white/5 bg-ink-800 px-4 py-6 sm:py-8 text-center">
+        <ListVideo className="h-6 w-6 sm:h-8 sm:w-8 text-mist-700" aria-hidden="true" />
+        <p className="text-xs sm:text-sm font-medium text-mist-300">{t("noChannelSelected")}</p>
+        <p className="text-[10px] sm:text-xs text-mist-500">{t("selectChannelHint")}</p>
       </div>
     );
   }

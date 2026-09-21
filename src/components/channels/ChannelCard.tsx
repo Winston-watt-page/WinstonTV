@@ -29,7 +29,7 @@ export const ChannelCard = forwardRef<HTMLButtonElement, ChannelCardProps>(
         onKeyDown={(e) => {
           if (e.key === "Enter") onSelect(channel.id);
         }}
-        className={`group relative flex w-full flex-col gap-3 rounded-xl border p-3 text-left transition-colors
+        className={`group relative flex w-full flex-col gap-2 sm:gap-3 rounded-xl border p-2 sm:p-3 text-left transition-colors
           focus:outline-none focus-visible:shadow-focus
           ${
             isActive
@@ -39,11 +39,11 @@ export const ChannelCard = forwardRef<HTMLButtonElement, ChannelCardProps>(
         aria-pressed={isActive}
         aria-label={`${channel.name}${isActive ? `, ${t("live")}` : ""}`}
       >
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <ChannelLogo src={channel.logo} name={channel.name} size="md" />
           <div className="min-w-0 flex-1">
-            <p className="truncate text-sm font-medium text-mist-100">{channel.name}</p>
-            <p className="truncate text-xs text-mist-500">
+            <p className="truncate text-xs sm:text-sm font-medium text-mist-100">{channel.name}</p>
+            <p className="truncate text-[10px] sm:text-xs text-mist-500">
               {channel.group}
               {channel.language ? ` · ${channel.language}` : ""}
             </p>

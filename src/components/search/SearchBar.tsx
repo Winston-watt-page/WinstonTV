@@ -45,7 +45,7 @@ export function SearchBar({ autoFocus = false }: { autoFocus?: boolean }) {
   return (
     <div className="relative flex-1">
       <Search
-        className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-mist-500"
+        className="pointer-events-none absolute left-2.5 sm:left-3 top-1/2 h-3.5 w-3.5 sm:h-4 sm:w-4 -translate-y-1/2 text-mist-500"
         aria-hidden="true"
       />
       <input
@@ -55,16 +55,16 @@ export function SearchBar({ autoFocus = false }: { autoFocus?: boolean }) {
         onChange={(e) => handleChange(e.target.value)}
         placeholder={t("searchPlaceholder")}
         aria-label={t("search")}
-        className="w-full rounded-full border border-white/5 bg-ink-700 py-2.5 pl-9 pr-9 text-sm text-mist-100 placeholder:text-mist-700 focus:outline-none focus-visible:shadow-focus"
+        className="w-full rounded-full border border-white/5 bg-ink-700 py-2 sm:py-2.5 pl-8 sm:pl-9 pr-8 sm:pr-9 text-xs sm:text-sm text-mist-100 placeholder:text-mist-700 focus:outline-none focus-visible:shadow-focus"
       />
       {value && (
         <button
           type="button"
           onClick={handleClear}
           aria-label={t("close")}
-          className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-full p-1 text-mist-500 hover:text-mist-300"
+          className="absolute right-2 sm:right-2.5 top-1/2 -translate-y-1/2 rounded-full p-1 text-mist-500 hover:text-mist-300"
         >
-          <X className="h-3.5 w-3.5" />
+          <X className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
         </button>
       )}
     </div>

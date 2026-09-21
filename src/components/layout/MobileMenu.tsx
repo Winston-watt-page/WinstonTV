@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Home, Heart, LayoutGrid, Settings, Info, X } from "lucide-react";
+import { Home, Heart, LayoutGrid, Settings, Info, X, Crown } from "lucide-react";
 import { useAppStore } from "@/stores/useAppStore";
 import { useI18n } from "@/i18n";
 
@@ -9,6 +9,7 @@ const ITEMS = [
   { view: "home" as const, icon: Home, labelKey: "channelList" as const },
   { view: "categories" as const, icon: LayoutGrid, labelKey: "categories" as const },
   { view: "favorites" as const, icon: Heart, labelKey: "favorites" as const },
+  { view: "premium" as const, icon: Crown, labelKey: "premium" as const },
   { view: "settings" as const, icon: Settings, labelKey: "playerSettings" as const },
   { view: "about" as const, icon: Info, labelKey: "about" as const },
 ];
@@ -60,10 +61,10 @@ export function MobileMenu() {
               key={view}
               type="button"
               onClick={() => setActiveView(view)}
-              className="flex flex-col items-center gap-1.5 rounded-xl border border-white/5 bg-ink-700 py-4 text-mist-200 hover:border-white/15"
+              className="flex flex-col items-center gap-1.5 rounded-xl border border-white/5 bg-ink-700 py-3 sm:py-4 text-mist-200 hover:border-white/15"
             >
-              <Icon className="h-5 w-5" aria-hidden="true" />
-              <span className="text-xs">{t(labelKey)}</span>
+              <Icon className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
+              <span className="text-[10px] sm:text-xs">{t(labelKey)}</span>
             </button>
           ))}
         </div>

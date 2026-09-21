@@ -2,6 +2,7 @@ import { parseM3U } from "@/lib/m3u/parser";
 import { readJSON, writeJSON, readString, writeString } from "@/lib/storage";
 import { DEFAULT_PLAYLIST_URL, STORAGE_KEYS } from "@/config";
 import type { Channel } from "@/types/channel";
+import { filterValidChannels } from "@/lib/channelUtils";
 
 export interface PlaylistResult {
   channels: Channel[];
@@ -37,7 +38,8 @@ export async function fetchPlaylist(playlistUrl: string = DEFAULT_PLAYLIST_URL):
   }
 
   const text = await response.text();
-  const channels = parseM3U(text);
+  const parsedChannels = parseM3U(text);
+  const channels = filterValidChannels(parsedChannels);
 
   if (channels.length === 0) {
     throw new Error("empty");

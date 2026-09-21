@@ -21,8 +21,8 @@ export function CategoriesView() {
   }, [channels, selectedCategory, searchQuery]);
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="text-lg font-medium text-mist-100">{t("categories")}</h1>
+    <div className="flex flex-col gap-4 sm:gap-6">
+      <h1 className="text-base sm:text-lg font-medium text-mist-100">{t("categories")}</h1>
       <CategoryTabs categories={categories} />
       <ChannelGrid channels={visible} />
     </div>

@@ -18,7 +18,7 @@ export function SettingsPanel() {
   const { refresh } = usePlaylist();
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-4 sm:gap-6">
       <LanguageSelector />
 
       <div>
@@ -40,7 +40,7 @@ export function SettingsPanel() {
             </button>
           ))}
         </div>
-        <p className="mt-1.5 text-[11px] text-mist-700">
+        <p className="mt-1.5 text-[10px] sm:text-[11px] text-mist-700">
           Applied when the active stream offers that quality.
         </p>
       </div>
@@ -48,9 +48,9 @@ export function SettingsPanel() {
       <div className="rounded-lg border border-white/10 p-3">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <p className="text-sm text-mist-100">{channelCount} {t("channelsAvailable")}</p>
+            <p className="text-xs sm:text-sm text-mist-100">{channelCount} {t("channelsAvailable")}</p>
             {playlistUpdatedAt && (
-              <p className="text-[11px] text-mist-500">
+              <p className="text-[10px] sm:text-[11px] text-mist-500">
                 {t("lastUpdated")}: {new Date(playlistUpdatedAt).toLocaleString()}
               </p>
             )}
@@ -58,15 +58,15 @@ export function SettingsPanel() {
           <button
             type="button"
             onClick={() => refresh()}
-            className="flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 text-xs font-medium text-mist-100 hover:bg-white/5"
+            className="flex items-center gap-1.5 rounded-full border border-white/10 px-2.5 sm:px-3 py-1.5 text-[10px] sm:text-xs font-medium text-mist-100 hover:bg-white/5"
           >
-            <RefreshCw className="h-3.5 w-3.5" />
+            <RefreshCw className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
             {t("refreshChannels")}
           </button>
         </div>
       </div>
 
-      <div className="rounded-lg border border-white/10 p-3 text-xs text-mist-500">
+      <div className="rounded-lg border border-white/10 p-3 text-[10px] sm:text-xs text-mist-500">
         <p className="font-medium text-mist-300">{t("about")}</p>
         <p className="mt-1">{t("winstonTvAbout")}</p>
         <p className="mt-1">{t("poweredByPublicPlaylist")}</p>

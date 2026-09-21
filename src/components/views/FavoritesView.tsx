@@ -18,8 +18,8 @@ export function FavoritesView() {
   }, [channels, favoriteIds, searchQuery]);
 
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="text-lg font-medium text-mist-100">{t("favorites")}</h1>
+    <div className="flex flex-col gap-4 sm:gap-6">
+      <h1 className="text-base sm:text-lg font-medium text-mist-100">{t("favorites")}</h1>
       <ChannelGrid
         channels={favoriteChannels}
         emptyTitleKey="noFavoritesTitle"

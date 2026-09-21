@@ -32,7 +32,7 @@ export function CategoryTabs({ categories }: CategoryTabsProps) {
             role="tab"
             aria-selected={isActive}
             onClick={() => setCategory(cat)}
-            className={`shrink-0 rounded-full border px-4 py-1.5 text-sm transition-colors focus:outline-none focus-visible:shadow-focus ${
+            className={`shrink-0 rounded-full border px-3 sm:px-4 py-1.5 text-xs sm:text-sm transition-colors focus:outline-none focus-visible:shadow-focus ${
               isActive
                 ? "border-marigold-500 bg-marigold-500/15 text-marigold-400"
                 : "border-white/5 bg-ink-700 text-mist-300 hover:border-white/15"

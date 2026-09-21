@@ -13,7 +13,7 @@ export function LanguageSelector() {
           type="button"
           onClick={() => setLang("ta")}
           aria-pressed={lang === "ta"}
-          className={`flex-1 rounded-lg border px-3 py-2 text-sm font-tamil transition-colors ${
+          className={`flex-1 rounded-lg border px-2.5 sm:px-3 py-2 text-xs sm:text-sm font-tamil transition-colors ${
             lang === "ta"
               ? "border-marigold-500 bg-marigold-500/15 text-marigold-400"
               : "border-white/10 text-mist-300 hover:border-white/20"
@@ -25,7 +25,7 @@ export function LanguageSelector() {
           type="button"
           onClick={() => setLang("en")}
           aria-pressed={lang === "en"}
-          className={`flex-1 rounded-lg border px-3 py-2 text-sm transition-colors ${
+          className={`flex-1 rounded-lg border px-2.5 sm:px-3 py-2 text-xs sm:text-sm transition-colors ${
             lang === "en"
               ? "border-marigold-500 bg-marigold-500/15 text-marigold-400"
               : "border-white/10 text-mist-300 hover:border-white/20"

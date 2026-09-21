@@ -1,5 +1,6 @@
 import type { Channel } from "@/types/channel";
 import { CATEGORY_FALLBACK } from "@/config";
+import { isValidChannelUrl } from "@/lib/channelUtils";
 
 /**
  * Parses M3U/M3U8 playlist text into a clean, sanitized channel list.
@@ -19,12 +20,7 @@ function sanitizeText(value: string | undefined | null): string {
 }
 
 function isSafeStreamUrl(url: string): boolean {
-  try {
-    const parsed = new URL(url.trim());
-    return parsed.protocol === "http:" || parsed.protocol === "https:";
-  } catch {
-    return false;
-  }
+  return isValidChannelUrl(url);
 }
 
 function sanitizeLogoUrl(url: string | undefined): string | null {
@@ -99,7 +95,7 @@ export function parseM3U(raw: string): Channel[] {
 
     // A non-comment, non-empty line is treated as the stream URL.
     const url = line;
-    if (!isSafeStreamUrl(url)) {
+    if (!isValidChannelUrl(url)) {
       pendingName = "";
       pendingAttrs = {};
       continue;
